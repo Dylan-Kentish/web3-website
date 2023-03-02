@@ -1,10 +1,6 @@
 import "./index.css";
 
-import {
-    EthereumClient,
-    modalConnectors,
-    walletConnectProvider,
-} from "@web3modal/ethereum";
+import { EthereumClient, modalConnectors } from "@web3modal/ethereum";
 import { Web3Modal } from "@web3modal/react";
 import React from "react";
 import ReactDOM from "react-dom/client";

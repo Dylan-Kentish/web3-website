@@ -151,9 +151,7 @@ const abi = [
     {
         inputs: [],
         name: "packContract",
-        outputs: [
-            { internalType: "contract VortexPacks", name: "", type: "address" },
-        ],
+        outputs: [{ internalType: "contract VortexPacks", name: "", type: "address" }],
         stateMutability: "view",
         type: "function",
     },
@@ -185,18 +183,14 @@ const abi = [
         type: "function",
     },
     {
-        inputs: [
-            { internalType: "bytes32", name: "_merkleRoot", type: "bytes32" },
-        ],
+        inputs: [{ internalType: "bytes32", name: "_merkleRoot", type: "bytes32" }],
         name: "setMerkleRoot",
         outputs: [],
         stateMutability: "nonpayable",
         type: "function",
     },
     {
-        inputs: [
-            { internalType: "uint256", name: "_publicPrice", type: "uint256" },
-        ],
+        inputs: [{ internalType: "uint256", name: "_publicPrice", type: "uint256" }],
         name: "setPublicPrice",
         outputs: [],
         stateMutability: "nonpayable",
@@ -229,9 +223,7 @@ const abi = [
         type: "function",
     },
     {
-        inputs: [
-            { internalType: "uint256", name: "_vortexPrice", type: "uint256" },
-        ],
+        inputs: [{ internalType: "uint256", name: "_vortexPrice", type: "uint256" }],
         name: "setVortexPrice",
         outputs: [],
         stateMutability: "nonpayable",
@@ -245,9 +237,7 @@ const abi = [
         type: "function",
     },
     {
-        inputs: [
-            { internalType: "address", name: "newOwner", type: "address" },
-        ],
+        inputs: [{ internalType: "address", name: "newOwner", type: "address" }],
         name: "transferOwnership",
         outputs: [],
         stateMutability: "nonpayable",
@@ -271,9 +261,7 @@ const abi = [
         type: "function",
     },
     {
-        inputs: [
-            { internalType: "address payable", name: "_to", type: "address" },
-        ],
+        inputs: [{ internalType: "address payable", name: "_to", type: "address" }],
         name: "withdrawAll",
         outputs: [],
         stateMutability: "nonpayable",
