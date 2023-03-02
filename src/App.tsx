@@ -1,9 +1,9 @@
 import { useWeb3Modal, Web3Button } from "@web3modal/react";
 import { ethers } from "ethers";
-import { useState } from "react";
 import { useAccount, useContractRead, useDisconnect } from "wagmi";
 
 import reactLogo from "./assets/react.svg";
+import viteLogo from "./assets/vite.svg";
 import { abi, address } from "./contract/VortexFoundersPacks";
 
 function App() {
@@ -34,7 +34,7 @@ function App() {
                 <h1 className="text-4xl">Vite + React + TS + ESLint + Prettier + Tailwind</h1>
                 <div className="flex">
                     <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-                        <img src="/vite.svg" className="h-28" alt="Vite logo" />
+                        <img src={viteLogo} className="h-28" alt="Vite logo" />
                     </a>
                     <a href="https://reactjs.org" target="_blank" rel="noreferrer">
                         <img src={reactLogo} className="h-28 animate-spin-slow" alt="React logo" />
