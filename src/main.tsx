@@ -1,4 +1,4 @@
-import "./index.css";
+import "./styles/globals.css";
 
 import { EthereumClient, modalConnectors } from "@web3modal/ethereum";
 import { Web3Modal } from "@web3modal/react";
