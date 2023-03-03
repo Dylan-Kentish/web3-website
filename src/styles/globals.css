@@ -1,4 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+html {
+    @apply m-0 scroll-p-16 scroll-smooth;
+}
+
+body {
+    @apply font-roboto;
+}
+
+body::-webkit-scrollbar {
+    @apply hidden;
+}
