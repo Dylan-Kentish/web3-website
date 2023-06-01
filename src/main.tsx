@@ -1,44 +1,46 @@
 import "./styles/globals.css";
 
-import { EthereumClient, modalConnectors } from "@web3modal/ethereum";
+import { EthereumClient, w3mConnectors } from "@web3modal/ethereum";
 import { Web3Modal } from "@web3modal/react";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { configureChains, createClient, WagmiConfig } from "wagmi";
+import { configureChains, createConfig, WagmiConfig } from "wagmi";
 import { mainnet, sepolia } from "wagmi/chains";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
 
 import App from "@/App";
 
-const network = import.meta.env.VITE_CHAIN_ID === "1" ? mainnet : sepolia;
+const apiKey = import.meta.env.VITE_ALCHEMY_API_KEY;
+const chainId = import.meta.env.VITE_CHAIN_ID;
+const projectId = import.meta.env.VITE_WALLET_CONNECT_PROJECT_ID;
 
-const { chains, provider, webSocketProvider } = configureChains(
-  [network],
+const chain = chainId === "1" ? mainnet : sepolia;
+
+const { chains, publicClient, webSocketPublicClient } = configureChains(
+  [chain],
   [
     alchemyProvider({
-      apiKey: import.meta.env.VITE_ALCHEMY_API_KEY,
-      priority: 0,
-      weight: 1,
+      apiKey,
     }),
-    publicProvider({ priority: 1, weight: 2 }),
+    publicProvider(),
   ]
 );
 
-const client = createClient({
+const config = createConfig({
   autoConnect: true,
-  connectors: modalConnectors({ appName: "web3Modal", chains }),
-  provider,
-  webSocketProvider,
+  connectors: w3mConnectors({ chains, version: 2, projectId }),
+  publicClient,
+  webSocketPublicClient,
 });
 
 // Web3Modal Ethereum Client
-const ethereumClient = new EthereumClient(client, chains);
+const ethereumClient = new EthereumClient(config, chains);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <>
-      <WagmiConfig client={client}>
+      <WagmiConfig config={config}>
         <App />
       </WagmiConfig>
 

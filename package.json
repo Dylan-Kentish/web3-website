@@ -13,12 +13,12 @@
     "type-check": "tsc"
   },
   "dependencies": {
-    "@web3modal/ethereum": "^2.1.1",
-    "@web3modal/react": "^2.1.1",
-    "ethers": "^5.7.2",
+    "@web3modal/ethereum": "^2.4.2",
+    "@web3modal/react": "^2.4.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "wagmi": "^0.11.5"
+    "viem": "^0.3.43",
+    "wagmi": "^1.0.9"
   },
   "devDependencies": {
     "@types/eslint": "^8.21.1",
@@ -40,7 +40,6 @@
     "prettier": "^2.8.4",
     "prettier-plugin-tailwindcss": "^0.2.4",
     "tailwindcss": "^3.2.7",
-    "typescript": "^4.9.3",
     "vite": "^4.1.0",
     "vite-tsconfig-paths": "^4.2.0"
   }
