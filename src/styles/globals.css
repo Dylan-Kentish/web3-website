@@ -5,13 +5,13 @@
 @tailwind utilities;
 
 html {
-    @apply m-0 scroll-p-16 scroll-smooth;
+  @apply m-0 scroll-p-16 scroll-smooth;
 }
 
 body {
-    @apply font-roboto;
+  @apply font-roboto;
 }
 
 body::-webkit-scrollbar {
-    @apply hidden;
+  @apply hidden;
 }
